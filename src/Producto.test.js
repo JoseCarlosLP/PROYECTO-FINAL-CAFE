@@ -6,7 +6,9 @@ describe("Producto", () => {
     let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
     expect(prod1.Id).toEqual(1);
   });
+});
 
+describe("ListaProductos", () => {
   it("deberia crear una lista de productos", () => {
     let listaProd= new ListaProductos();
     expect(listaProd.Lista.length).toEqual(0);
@@ -30,11 +32,24 @@ describe("Producto", () => {
       expect(listaProd.Lista.length).toEqual(3);
   });
 
-  it("deberia eliminar un producto a la lista", () => {
+  it("deberia eliminar un producto de la lista", () => {
     let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
     let listaProd= new ListaProductos();
     listaProd.añadirProducto(prod1);
     listaProd.eliminarProducto(1);
-    expect(listaProd.Lista[0]).toEqual({});
+    expect(listaProd.Lista[0]).toEqual(undefined);
+  });
+
+  it("deberia eliminar un producto de la lista y recorrer los elementos hacia la posición vacía", () => {
+    let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+    let prod2= new Producto(2, "Cereales", "Cereales Fruit Loops");
+    let prod3= new Producto(3, "Coca Cola", "Coca Cola de 300 ml.");
+    let listaProd= new ListaProductos();
+    listaProd.añadirProducto(prod1);
+    listaProd.añadirProducto(prod2);
+    listaProd.añadirProducto(prod3);
+    listaProd.eliminarProducto(1);
+    expect(listaProd.Lista[0].Id).toEqual(2);
+    expect(listaProd.Lista.length).toEqual(2);
   });
 });
