@@ -24,6 +24,21 @@ class ListaProductos
             }
         }
     };
+
+    
+    aTexto()
+    {
+        let cadena = "";
+        for(let i=0;i<this.Lista.length;i++)
+        {
+            cadena += this.Lista[i].aTexto();
+            if (i<this.Lista.length - 1)
+            {
+                cadena+= ";";
+            }
+        }
+        return cadena;
+    };
 }
 
 export default ListaProductos;
