@@ -29,4 +29,12 @@ describe("Producto", () => {
       listaProd.añadirProducto(prod3);
       expect(listaProd.Lista.length).toEqual(3);
   });
+
+  it("deberia eliminar un producto a la lista", () => {
+    let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+    let listaProd= new ListaProductos();
+    listaProd.añadirProducto(prod1);
+    listaProd.eliminarProducto(1);
+    expect(listaProd.Lista[0]).toEqual({});
+  });
 });
