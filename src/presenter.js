@@ -1,15 +1,13 @@
-import sumar from "./sumador";
+  import Producto from "./Producto";
+  import ListaProductos from "./ListaProductos";
 
-const first = document.querySelector("#primer-numero");
-const second = document.querySelector("#segundo-numero");
-const form = document.querySelector("#sumar-form");
+const nombre = document.querySelector("#nombre");
+const descripcion = document.querySelector("#descripcion");
+const form = document.querySelector("#producto-form");
 const div = document.querySelector("#resultado-div");
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  const firstNumber = Number.parseInt(first.value);
-  const secondNumber = Number.parseInt(second.value);
-
-  div.innerHTML = "<p>" + sumar(firstNumber, secondNumber) + "</p>";
+  div.innerHTML = "Nombre: " + nombre.value + ", Descripción: " + descripcion.value;
 });
