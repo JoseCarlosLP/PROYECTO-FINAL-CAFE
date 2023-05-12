@@ -52,4 +52,12 @@ describe("ListaProductos", () => {
     expect(listaProd.Lista[0].Id).toEqual(2);
     expect(listaProd.Lista.length).toEqual(2);
   });
+
+  it("No deberia eliminar un producto inexistente en la lista", () => {
+    let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+    let listaProd= new ListaProductos();
+    listaProd.añadirProducto(prod1);
+    listaProd.eliminarProducto(7);
+    expect(listaProd.Lista[0].Id).toEqual(1);
+  });
 });
