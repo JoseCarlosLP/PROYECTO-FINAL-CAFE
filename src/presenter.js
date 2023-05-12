@@ -4,7 +4,8 @@
 const nombre = document.querySelector("#nombre");
 const descripcion = document.querySelector("#descripcion");
 const form = document.querySelector("#crearProducto-form");
-const div = document.querySelector("#resultado-div");
+const divProducto = document.querySelector("#resultadoProducto-div");
+const divLista = document.querySelector("#resultadoLista-div");
 let listaProd = new ListaProductos();
 let contadorId = 1;
 
@@ -13,6 +14,11 @@ form.addEventListener("submit", (event) => {
 
   let productoAAñadir = new Producto(contadorId, nombre.value, descripcion.value);
   listaProd.añadirProducto(productoAAñadir);
-  contadorId+=1;
-  div.innerHTML = "Nombre: " + nombre.value + ", Descripcion: " + descripcion.value;
+  contadorId++;
+
+  divProducto.innerHTML = productoAAñadir.aTexto();
+  divLista.innerHTML = listaProd.aTexto();
+
+  nombre.value="";
+  descripcion.value="";
 });

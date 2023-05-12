@@ -63,6 +63,6 @@ describe("ListaProductos", () => {
         listaProd.añadirProducto(prod1);
         listaProd.añadirProducto(prod2);
         listaProd.añadirProducto(prod3);
-        expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema;Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops;Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml.");
+        expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml.");
         });
   });

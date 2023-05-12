@@ -34,7 +34,7 @@ class ListaProductos
             cadena += this.Lista[i].aTexto();
             if (i<this.Lista.length - 1)
             {
-                cadena+= ";";
+                cadena+= "; ";
             }
         }
         return cadena;
