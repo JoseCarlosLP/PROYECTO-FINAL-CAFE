@@ -12,13 +12,21 @@ let contadorId = 1;
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  let productoAAñadir = new Producto(contadorId, nombre.value, descripcion.value);
-  listaProd.añadirProducto(productoAAñadir);
-  contadorId++;
+  if (nombre.value.trim() !== "" && descripcion.value.trim() !== "") {
+    let productoAAñadir = new Producto(contadorId, nombre.value, descripcion.value);
+    listaProd.añadirProducto(productoAAñadir);
+    contadorId++;
 
-  divProducto.innerHTML = productoAAñadir.aTexto();
-  divLista.innerHTML = listaProd.aTexto();
+    divProducto.innerHTML = productoAAñadir.aTexto();
+    divLista.innerHTML = listaProd.aTexto();
 
-  nombre.value="";
-  descripcion.value="";
+    nombre.value = "";
+    descripcion.value = "";
+  }
+  else
+  {
+    alert("Ingrese valores válidos para nombre y descripción.");
+    return;
+  }
 });
+
