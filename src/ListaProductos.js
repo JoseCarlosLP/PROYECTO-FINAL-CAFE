@@ -6,6 +6,11 @@ class ListaProductos
     {
         this.Lista = [];
     };
+
+    añadirProducto(producto)
+    {
+        this.Lista.push(producto);
+    };
 }
 
 export default ListaProductos;
