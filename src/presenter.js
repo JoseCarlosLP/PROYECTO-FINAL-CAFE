@@ -3,11 +3,16 @@
 
 const nombre = document.querySelector("#nombre");
 const descripcion = document.querySelector("#descripcion");
-const form = document.querySelector("#producto-form");
+const form = document.querySelector("#crearProducto-form");
 const div = document.querySelector("#resultado-div");
+let listaProd = new ListaProductos();
+let contadorId = 1;
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  div.innerHTML = "Nombre: " + nombre.value + ", Descripción: " + descripcion.value;
+  let productoAAñadir = new Producto(contadorId, nombre.value, descripcion.value);
+  listaProd.añadirProducto(productoAAñadir);
+  contadorId+=1;
+  div.innerHTML = "Nombre: " + nombre.value + ", Descripcion: " + descripcion.value;
 });

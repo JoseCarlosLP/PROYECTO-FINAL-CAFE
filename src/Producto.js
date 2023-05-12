@@ -16,6 +16,13 @@ class Producto
     delete this.Stock;
     delete this.CantidadReservada;
   };
+
+  aTexto()
+    {
+        let cadena = "";
+        cadena += "Id: " + this.Id.toString() + ", Nombre: " + this.Nombre + ", Descripción: " + this.Descripcion;
+        return cadena;
+    };
 }
 
 export default Producto;

@@ -1,9 +1,9 @@
-describe("Sumador", () => {
-  it("Shows the amount of the addition to the user", () => {
+describe("index", () => {
+  it("Verifica que los valores ingresados se lean correctamente", () => {
     cy.visit("/");
-    cy.get("#primer-numero").type(4);
-    cy.get("#segundo-numero").type(5);
-    cy.get("#sumar-button").click();
-    cy.get("#resultado-div").should("contain", "9");
+    cy.get("#nombre").type("Galletas");
+    cy.get("#descripcion").type("Galletas de chocolate con relleno de crema");
+    cy.get("#guardar-button").click();
+    cy.get("#resultado-div").should("contain", "Nombre: Galletas, Descripcion: Galletas de chocolate con relleno de crema");
   });
 });
