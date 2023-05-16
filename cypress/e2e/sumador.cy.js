@@ -16,7 +16,7 @@ describe("index", () => {
     cy.get("#descripcion").type("Cereales Fruit Loops");
     cy.get("#guardar-button").click();
     cy.get("#resultadoProducto-div").should("contain", "Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops");
-    cy.get("#resultadoLista-div").should("contain", "Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0")
+    cy.get("#resultadoLista-div").should("contain", "Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 0, Stock: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0, Stock: 0")
   }); 
 
   it("Verifica que el menu este vacio mientras no se hayan creado productos", () => {
