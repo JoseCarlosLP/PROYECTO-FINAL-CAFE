@@ -36,6 +36,12 @@ class Producto
     cadena+=", Precio: "+ this.Precio;
     return cadena;
   };
+
+  establecerStock(stock)
+  {
+    this.Stock=stock;
+  }
+  
 }
 
 export default Producto;
