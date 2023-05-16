@@ -41,7 +41,15 @@ class Producto
   {
     this.Stock=stock;
   }
-  
+
+  aTextoConStock()
+  {
+    let cadena = "";
+    cadena=this.aTextoConPrecio();
+    cadena+=", Stock: "+ this.Stock;
+    return cadena;
+  }
+
 }
 
 export default Producto;

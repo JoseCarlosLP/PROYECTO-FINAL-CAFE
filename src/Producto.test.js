@@ -29,4 +29,10 @@ describe("Producto", () => {
     expect(prod1.Stock).toEqual(100);
   });
   
+  it("deberia convertir un producto con stock a texto", () => {
+    let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+    prod1.establecerPrecio(10);
+    prod1.establecerStock(50);
+    expect(prod1.aTextoConStock()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 10, Stock: 50");
+  });
 });
