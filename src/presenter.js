@@ -6,6 +6,10 @@ const descripcion = document.querySelector("#descripcion");
 const form = document.querySelector("#crearProducto-form");
 const divProducto = document.querySelector("#resultadoProducto-div");
 const divLista = document.querySelector("#resultadoLista-div");
+
+const listaMenu = document.getElementById("menuDisponible");
+const menuRef = document.getElementById("menu-ref");
+
 let listaProd = new ListaProductos();
 let contadorId = 1;
 
@@ -30,3 +34,7 @@ form.addEventListener("submit", (event) => {
   }
 });
 
+menuRef.addEventListener('click',function(){
+  listaMenu.innerHTML="";  //Cada que se hace click, la lista se vacia y se evita duplicar el menu
+  listaMenu=listaProd.mostrarMenuDisponible(listaMenu);
+})

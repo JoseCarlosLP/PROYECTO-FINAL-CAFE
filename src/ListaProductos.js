@@ -25,7 +25,6 @@ class ListaProductos
         }
     };
 
-    
     aTexto()
     {
         let cadena = "";
@@ -39,6 +38,18 @@ class ListaProductos
         }
         return cadena;
     };
+
+    mostrarMenuDisponible(lista)
+    {
+        for(let i=0;i<this.Lista.length;i++)
+        {
+            let producto=this.Lista[i];
+            const li=document.createElement("li");
+            li.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
+            lista.appendChild(li);
+        }
+        return lista;
+    }
 }
 
 export default ListaProductos;
