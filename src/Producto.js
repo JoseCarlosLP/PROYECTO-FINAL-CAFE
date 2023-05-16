@@ -28,6 +28,14 @@ class Producto
   {
     this.Precio=precio;
   }
+  
+  aTextoConPrecio()
+  {
+    let cadena = "";
+    cadena=this.aTexto();
+    cadena+=", Precio: "+ this.Precio;
+    return cadena;
+  };
 }
 
 export default Producto;
