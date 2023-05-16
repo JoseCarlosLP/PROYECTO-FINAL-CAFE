@@ -55,6 +55,11 @@ class Producto
     return producto.Precio!=undefined && producto.Precio!=0;
   }
 
+  tieneStock()
+  {
+    return producto.Stock!=undefined && producto.Stock!=0
+  }
+
 }
 
 export default Producto;
