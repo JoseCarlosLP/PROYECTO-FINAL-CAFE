@@ -51,6 +51,7 @@ class ListaProductos
             const li=document.createElement("li");
             li.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
             if(producto.Precio!=undefined && producto.Precio!=0) li.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
+            if(producto.Stock!=undefined && producto.Stock!=0) li.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock;
             lista.appendChild(li);
         }
         return lista;
