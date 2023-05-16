@@ -18,11 +18,16 @@ class Producto
   };
 
   aTexto()
-    {
-        let cadena = "";
-        cadena += "Id: " + this.Id.toString() + ", Nombre: " + this.Nombre + ", Descripción: " + this.Descripcion;
-        return cadena;
-    };
+  {
+    let cadena = "";
+    cadena += "Id: " + this.Id.toString() + ", Nombre: " + this.Nombre + ", Descripción: " + this.Descripcion;
+    return cadena;
+  };
+
+  establecerPrecio(precio)
+  {
+    this.Precio=precio;
+  }
 }
 
 export default Producto;
