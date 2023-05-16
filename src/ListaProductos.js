@@ -48,6 +48,7 @@ class ListaProductos
             let producto=this.Lista[i];
             const li=document.createElement("li");
             li.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
+            if(producto.Precio!=undefined && producto.Precio!=0) li.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
             lista.appendChild(li);
         }
         return lista;

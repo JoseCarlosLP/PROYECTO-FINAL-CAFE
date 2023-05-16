@@ -28,6 +28,7 @@ form.addEventListener("submit", (event) => {
 
     nombre.value = "";
     descripcion.value = "";
+    precio.value = 0;
   }
   else
   {
