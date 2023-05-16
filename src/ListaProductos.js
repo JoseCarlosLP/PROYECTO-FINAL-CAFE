@@ -43,6 +43,7 @@ class ListaProductos
         return cadena;
     };
 
+    
     mostrarMenuDisponible(lista)
     {
         for(let i=0;i<this.Lista.length;i++)
@@ -50,7 +51,7 @@ class ListaProductos
             let producto=this.Lista[i];
             const li=document.createElement("li");
             li.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
-            if(producto.Precio!=undefined && producto.Precio!=0) li.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
+            if(producto.tienePrecio()) li.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
             if(producto.Stock!=undefined && producto.Stock!=0) li.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock;
             lista.appendChild(li);
         }

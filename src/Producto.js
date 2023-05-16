@@ -50,6 +50,11 @@ class Producto
     return cadena;
   }
 
+  tienePrecio()
+  {
+    return producto.Precio!=undefined && producto.Precio!=0;
+  }
+
 }
 
 export default Producto;
