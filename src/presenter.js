@@ -21,7 +21,7 @@ form.addEventListener("submit", (event) => {
     listaProd.añadirProducto(productoAAñadir);
     contadorId++;
 
-    divProducto.innerHTML = productoAAñadir.aTexto();
+    divProducto.innerHTML = productoAAñadir.aTextoConPrecio();
     divLista.innerHTML = listaProd.aTexto();
 
     nombre.value = "";

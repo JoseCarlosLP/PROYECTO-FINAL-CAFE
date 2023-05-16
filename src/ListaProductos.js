@@ -30,7 +30,9 @@ class ListaProductos
         let cadena = "";
         for(let i=0;i<this.Lista.length;i++)
         {
-            cadena += this.Lista[i].aTexto();
+            if(this.Lista[i].Precio===undefined || this.Lista[i].Precio===0)
+                cadena += this.Lista[i].aTexto();
+            else cadena += this.Lista[i].aTextoConPrecio();
             if (i<this.Lista.length - 1)
             {
                 cadena+= "; ";
