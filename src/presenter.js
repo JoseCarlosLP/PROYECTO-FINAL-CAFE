@@ -3,6 +3,7 @@
 
 const nombre = document.querySelector("#nombre");
 const descripcion = document.querySelector("#descripcion");
+const precio = document.querySelector("#precio");
 const form = document.querySelector("#crearProducto-form");
 const divProducto = document.querySelector("#resultadoProducto-div");
 const divLista = document.querySelector("#resultadoLista-div");
@@ -18,6 +19,7 @@ form.addEventListener("submit", (event) => {
 
   if (nombre.value.trim() !== "" && descripcion.value.trim() !== "") {
     let productoAAñadir = new Producto(contadorId, nombre.value, descripcion.value);
+    productoAAñadir.establecerPrecio(precio.value);
     listaProd.añadirProducto(productoAAñadir);
     contadorId++;
 
