@@ -17,7 +17,7 @@ class Reserva{
     {
         divReserva.innerText="";
         const content = document.createElement("p");
-        content.innerText="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p><p>"+this.productos.aTexto()+"</p>";
+        content.innerHTML="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p><p>"+this.productos.aTexto()+"</p>";
         const ConfirmarButton=document.createElement("button");
         ConfirmarButton.innerText="Confirmar Reserva";
         content.appendChild(ConfirmarButton);

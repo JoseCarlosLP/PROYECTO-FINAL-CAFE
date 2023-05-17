@@ -62,6 +62,8 @@ class ListaProductos
                 producto.Precio=0;
                 producto.Stock=0;
                 this.reserva.añadirProducto(producto);
+                alert("Se reservó el producto escogido");
+                //-----funcion decrementar stock---------
             }
         });
         console.log(this.reserva);
