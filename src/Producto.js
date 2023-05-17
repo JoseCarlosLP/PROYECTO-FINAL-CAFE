@@ -59,6 +59,16 @@ class Producto
   {
     return this.Stock!=undefined && this.Stock!=0
   }
+  asignarCantidad(stock)
+  {
+    if(stock>0)
+      this.Stock=stock;
+  };
+
+  incrementarStock(cantidadReservada)
+  {
+    this.Stock+=cantidadReservada;
+  };
 
 }
 
