@@ -22,7 +22,7 @@ class Reserva{
             CancelarButton.innerText="Cancelar Reserva";
             content.appendChild(CancelarButton);
             divReserva.appendChild(content);
-            CancelarButton.onclick=()=>{
+            CancelarButton.onclick=()=>{ 
                 this.CancelarReserva();
                 alert("Se canceló la reserva");
                 //-------funcion incrementar stock-------

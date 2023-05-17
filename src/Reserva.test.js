@@ -28,5 +28,13 @@ describe("Reserva de Productos", ()=>{
         reserva.CancelarReserva();
         expect(reserva.getProductos().length).toEqual(0);
     });
+    it("Deberia añadir los producto al realizare la reserva y decrementar el stock de los productos",()=>{
+        let reserva=new Reserva("Usuario 1");
+        let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+        prod1.establecerStock(10);
+        reserva.añadirProducto(prod1);
+        prod1.decrementarStock(1); //simulamos presionar el boton
+        expect(prod1.Stock).toEqual(9);
+    });
     
 });

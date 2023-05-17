@@ -38,8 +38,14 @@ describe("Producto", () => {
 
     it("deberia incrementar el stock dada una cantidad", () => {
       let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
-      prod1.asignarCantidad(10);
+      prod1.establecerStock(10);
       prod1.incrementarStock(5);
       expect(prod1.Stock).toEqual(15);
+  });
+    it("deberia decrementar el stock dada una cantidad reservada", () => {
+    let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
+    prod1.establecerStock(10);
+    prod1.decrementarStock(5);
+    expect(prod1.Stock).toEqual(5);
   });
 });

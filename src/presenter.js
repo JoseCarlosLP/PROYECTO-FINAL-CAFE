@@ -48,5 +48,4 @@ formVerReserva.addEventListener("submit", (event) => {
   event.preventDefault();
   divReserva.innerText="";
   listaProd.reserva.mostrar();
-
 });

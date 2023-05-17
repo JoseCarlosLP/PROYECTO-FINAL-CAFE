@@ -45,7 +45,8 @@ class ListaProductos
     };
     mostrarMenuDisponible(lista)
     {
-        this.reserva=new Reserva("Usuario 1");
+        if(!this.reserva)
+            this.reserva=new Reserva("Usuario 1");
         const ListaAMostrar=this.Lista;
         ListaAMostrar.forEach((producto, index) => {
             const li=document.createElement("li");
@@ -59,11 +60,9 @@ class ListaProductos
             
             botonReservar.onclick=()=>{
                 let producto=this.Lista[index];
-                producto.Precio=0;
-                producto.Stock=0;
                 this.reserva.añadirProducto(producto);
+                producto.decrementarStock(1);
                 alert("Se reservó el producto escogido");
-                //-----funcion decrementar stock---------
             }
         });
         console.log(this.reserva);

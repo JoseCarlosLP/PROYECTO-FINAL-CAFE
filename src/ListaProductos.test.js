@@ -87,6 +87,7 @@ describe("ListaProductos", () => {
       listaProd.añadirProducto(prod1);
       listaProd.añadirProducto(prod2);
       listaProd.añadirProducto(prod3);
-      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 15, Stock: 600; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml.");
+      prod1.decrementarStock(1); //simulamos presionar el boton
+      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 15, Stock: 599; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml.");
     });
   });

@@ -39,7 +39,8 @@ class Producto
 
   establecerStock(stock)
   {
-    this.Stock=stock;
+    if(stock>0)
+      this.Stock=stock;
   }
 
   aTextoConStock()
@@ -59,16 +60,17 @@ class Producto
   {
     return this.Stock!=undefined && this.Stock!=0
   }
-  asignarCantidad(stock)
-  {
-    if(stock>0)
-      this.Stock=stock;
-  };
 
   incrementarStock(cantidadReservada)
   {
     this.Stock+=cantidadReservada;
   };
+  
+  decrementarStock(cantidadReservada)
+  {
+    if(cantidadReservada<this.Stock)
+      this.Stock-=cantidadReservada;
+  }
 
 }
 
