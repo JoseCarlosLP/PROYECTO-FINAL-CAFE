@@ -25,11 +25,14 @@ class Reserva{
             CancelarButton.onclick=()=>{ 
                 this.CancelarReserva();
                 alert("Se canceló la reserva");
-                //-------funcion incrementar stock-------
                 this.mostrar();
             }
     }
     CancelarReserva(){
+        this.getProductos().forEach(producto => {
+        producto.incrementarStock(1);
+    });
+
         this.productos=new ListaProductos;
     }
 }
