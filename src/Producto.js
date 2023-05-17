@@ -52,12 +52,12 @@ class Producto
 
   tienePrecio()
   {
-    return producto.Precio!=undefined && producto.Precio!=0;
+    return this.Precio!=undefined && this.Precio!=0;
   }
 
   tieneStock()
   {
-    return producto.Stock!=undefined && producto.Stock!=0
+    return this.Stock!=undefined && this.Stock!=0
   }
 
 }
