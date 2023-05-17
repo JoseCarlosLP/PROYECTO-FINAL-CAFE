@@ -1,4 +1,5 @@
 import Producto from "./Producto.js";
+import Reserva from "./Reserva.js";
 
 class ListaProductos
 {
@@ -46,17 +47,26 @@ class ListaProductos
     
     mostrarMenuDisponible(lista)
     {
-        for(let i=0;i<this.Lista.length;i++)
-        {
-            let producto=this.Lista[i];
+        let reserva=new Reserva("Usuario 1");
+        const ListaAMostrar=this.Lista;
+        ListaAMostrar.forEach((producto, index) => {
             const li=document.createElement("li");
+            const botonReservar = document.createElement("button");
+            botonReservar.innerText="Reservar";
             li.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
             if(producto.tienePrecio()) li.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
             if(producto.tieneStock()) li.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock;
             lista.appendChild(li);
-        }
+            lista.appendChild(botonReservar);
+            
+            botonReservar.onclick=()=>{
+                reserva.añadirProducto(this.Lista[index]);
+            }
+            console.log(reserva);
+        });
         return lista;
     }
+    
 }
 
 export default ListaProductos;
