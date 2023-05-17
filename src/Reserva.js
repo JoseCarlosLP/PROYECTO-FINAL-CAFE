@@ -15,19 +15,19 @@ class Reserva{
     }
     mostrar()
     {
-        divReserva.innerText="";
-        const content = document.createElement("p");
-        content.innerHTML="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p><p>"+this.productos.aTexto()+"</p>";
-        const CancelarButton=document.createElement("button");
-        CancelarButton.innerText="Cancelar Reserva";
-        content.appendChild(CancelarButton);
-        divReserva.appendChild(content);
-        CancelarButton.onclick=()=>{
-            this.CancelarReserva();
-            alert("Se canceló la reserva");
-            //-------funcion incrementar stock-------
-            this.mostrar();
-        }
+            divReserva.innerText="Sin Productos Reservados";
+            const content = document.createElement("p");
+            content.innerHTML="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p><p>"+this.productos.aTexto()+"</p>";
+            const CancelarButton=document.createElement("button");
+            CancelarButton.innerText="Cancelar Reserva";
+            content.appendChild(CancelarButton);
+            divReserva.appendChild(content);
+            CancelarButton.onclick=()=>{
+                this.CancelarReserva();
+                alert("Se canceló la reserva");
+                //-------funcion incrementar stock-------
+                this.mostrar();
+            }
     }
     CancelarReserva(){
         this.productos=new ListaProductos;
