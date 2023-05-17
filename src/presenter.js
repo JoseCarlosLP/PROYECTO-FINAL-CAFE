@@ -42,5 +42,5 @@ form.addEventListener("submit", (event) => {
 
 menuRef.addEventListener('click',function(){
   listaMenu.innerHTML="";  //Cada que se hace click, la lista se vacia y se evita duplicar el menu
-  listaMenu=listaProd.mostrarMenuDisponible(listaMenu);
+  listaMenu.value=listaProd.mostrarMenuDisponible(listaMenu);
 })
