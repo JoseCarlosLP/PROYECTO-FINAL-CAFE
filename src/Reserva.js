@@ -18,16 +18,19 @@ class Reserva{
         divReserva.innerText="";
         const content = document.createElement("p");
         content.innerHTML="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p><p>"+this.productos.aTexto()+"</p>";
-        const ConfirmarButton=document.createElement("button");
-        ConfirmarButton.innerText="Confirmar Reserva";
-        content.appendChild(ConfirmarButton);
+        const CancelarButton=document.createElement("button");
+        CancelarButton.innerText="Cancelar Reserva";
+        content.appendChild(CancelarButton);
         divReserva.appendChild(content);
-        ConfirmarButton.onclick=()=>{
-            this.ConfirmarReserva();
+        CancelarButton.onclick=()=>{
+            this.CancelarReserva();
+            alert("Se canceló la reserva");
+            //-------funcion incrementar stock-------
+            this.mostrar();
         }
     }
-    ConfirmarReserva(){
-        
+    CancelarReserva(){
+        this.productos=new ListaProductos;
     }
 }
 export default Reserva;

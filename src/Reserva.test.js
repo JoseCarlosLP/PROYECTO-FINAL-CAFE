@@ -18,5 +18,14 @@ describe("Reserva de Productos", ()=>{
         reserva.añadirProducto(prod1);
         reserva.añadirProducto(prod2);
         expect(reserva.getProductos().length).toEqual(2);
-    })
+    });
+    it("Deberia eliminar los producto al cancelar la reserva",()=>{
+        let reserva=new Reserva("Usuario 1");
+        let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+        let prod2= new Producto(2, "Galletas", "Galletas de vainilla con relleno de crema");
+        reserva.añadirProducto(prod1);
+        reserva.añadirProducto(prod2);
+        reserva.CancelarReserva();
+        expect(reserva.getProductos().length).toEqual(0);
+    });
 });

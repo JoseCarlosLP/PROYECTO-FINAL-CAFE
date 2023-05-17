@@ -11,7 +11,7 @@ const divLista = document.querySelector("#resultadoLista-div");
 const listaMenu = document.getElementById("menuDisponible");
 const menuRef = document.getElementById("menu-ref");
 const formVerReserva=document.querySelector("#MostrarReserva-form");
-const divReserva=document.getElementById("diReserva");
+const divReserva=document.getElementById("divReserva");
 let listaProd = new ListaProductos();
 let contadorId = 1;
 
@@ -46,7 +46,7 @@ menuRef.addEventListener('click',function(){
 })
 formVerReserva.addEventListener("submit", (event) => {
   event.preventDefault();
-  //divReserva.innerText="";
+  divReserva.innerText="";
   listaProd.reserva.mostrar();
 
 });
