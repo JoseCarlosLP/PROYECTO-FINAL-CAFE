@@ -13,5 +13,10 @@ class Reserva{
     getProductos(){
         return this.productos.Lista;
     }
+    mostrar()
+    {
+        let texto="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p>"+this.productos.aTexto();
+        return texto;
+    }
 }
 export default Reserva;

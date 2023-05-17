@@ -43,11 +43,9 @@ class ListaProductos
         }
         return cadena;
     };
-
-    
     mostrarMenuDisponible(lista)
     {
-        let reserva=new Reserva("Usuario 1");
+        this.reserva=new Reserva("Usuario 1");
         const ListaAMostrar=this.Lista;
         ListaAMostrar.forEach((producto, index) => {
             const li=document.createElement("li");
@@ -60,13 +58,15 @@ class ListaProductos
             lista.appendChild(botonReservar);
             
             botonReservar.onclick=()=>{
-                reserva.añadirProducto(this.Lista[index]);
+                let producto=this.Lista[index];
+                producto.Precio=0;
+                producto.Stock=0;
+                this.reserva.añadirProducto(producto);
             }
-            console.log(reserva);
         });
+        console.log(this.reserva);
         return lista;
     }
-    
 }
 
 export default ListaProductos;

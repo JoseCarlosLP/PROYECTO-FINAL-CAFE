@@ -8,10 +8,10 @@ const stock = document.querySelector("#stock");
 const form = document.querySelector("#crearProducto-form");
 const divProducto = document.querySelector("#resultadoProducto-div");
 const divLista = document.querySelector("#resultadoLista-div");
-
 const listaMenu = document.getElementById("menuDisponible");
 const menuRef = document.getElementById("menu-ref");
-
+const formVerReserva=document.querySelector("#MostrarReserva-form");
+const divReserva=document.getElementById("div-reserva");
 let listaProd = new ListaProductos();
 let contadorId = 1;
 
@@ -44,3 +44,8 @@ menuRef.addEventListener('click',function(){
   listaMenu.innerHTML="";  //Cada que se hace click, la lista se vacia y se evita duplicar el menu
   listaMenu.value=listaProd.mostrarMenuDisponible(listaMenu);
 })
+formVerReserva.addEventListener("submit", (event) => {
+  event.preventDefault();
+  divReserva.innerHTML=listaProd.reserva.mostrar();
+  
+});
