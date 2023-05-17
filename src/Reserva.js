@@ -15,8 +15,19 @@ class Reserva{
     }
     mostrar()
     {
-        let texto="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p>"+this.productos.aTexto();
-        return texto;
+        divReserva.innerText="";
+        const content = document.createElement("p");
+        content.innerText="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p><p>"+this.productos.aTexto()+"</p>";
+        const ConfirmarButton=document.createElement("button");
+        ConfirmarButton.innerText="Confirmar Reserva";
+        content.appendChild(ConfirmarButton);
+        divReserva.appendChild(content);
+        ConfirmarButton.onclick=()=>{
+            this.ConfirmarReserva();
+        }
+    }
+    ConfirmarReserva(){
+        
     }
 }
 export default Reserva;
