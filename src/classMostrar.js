@@ -34,18 +34,18 @@ class Mostrar{
     }
     Reservas(reserva)
     {
-            divReserva.innerText="";
-            const content = document.createElement("p");
-            content.innerHTML="<p> Nombre de Usuario: "+reserva.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+reserva.productos.aTexto()+"</p>";
-            const CancelarButton=document.createElement("button");
-            CancelarButton.innerText="Cancelar Reserva";
-            content.appendChild(CancelarButton);
-            divReserva.appendChild(content);
-            CancelarButton.onclick=()=>{ 
-                this.CancelarReserva();
-                alert("Se canceló la reserva");
-                this.Reservas(reserva);
-            }
+        divReserva.innerText="";
+        const content = document.createElement("p");
+        content.innerHTML="<p> Nombre de Usuario: "+reserva.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+reserva.productos.aTexto()+"</p>";
+        const CancelarButton=document.createElement("button");
+        CancelarButton.innerText="Cancelar Reserva";
+        content.appendChild(CancelarButton);
+        divReserva.appendChild(content);
+        CancelarButton.onclick=()=>{ 
+            this.CancelarReserva();
+            alert("Se canceló la reserva");
+            this.Reservas(reserva);
+        }
     }
 }
 export default Mostrar;
