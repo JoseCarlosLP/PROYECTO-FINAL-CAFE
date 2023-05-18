@@ -31,12 +31,7 @@ class ListaProductos
         let cadena = "";
         for(let i=0;i<this.Lista.length;i++)
         {
-            // if(this.Lista[i].Precio===undefined || this.Lista[i].Precio===0)
-            //     cadena += this.Lista[i].aTexto();
-            // if(this.Lista[i].Stock===undefined || this.Lista[i].Stock===0)
-            //     cadena += this.Lista[i].aTextoConPrecio();
-            /*else */cadena += this.Lista[i].aTextoConStock();
-            
+            cadena += this.Lista[i].aTextoConStock();
             if (i<this.Lista.length - 1)
             {
                 cadena+= "; ";
@@ -50,6 +45,9 @@ class ListaProductos
             this.reserva=new Reserva("Usuario 1");
         const ListaAMostrar=this.Lista;
         ListaAMostrar.forEach((producto, index) => {
+            
+            if(producto.tieneStock())
+            {
             const li=document.createElement("li");
             const botonReservar = document.createElement("button");
             botonReservar.innerText="Reservar";
@@ -64,9 +62,8 @@ class ListaProductos
                 this.reserva.añadirProducto(producto);
                 producto.decrementarStock(1);
                 alert("Se reservó el producto escogido");
-            }
+            }}
         });
-        console.log(this.reserva);
         return lista;
     }
 }
