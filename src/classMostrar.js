@@ -42,7 +42,7 @@ class Mostrar{
         content.appendChild(CancelarButton);
         divReserva.appendChild(content);
         CancelarButton.onclick=()=>{ 
-            this.CancelarReserva();
+            reserva.CancelarReserva();
             alert("Se canceló la reserva");
             this.Reservas(reserva);
         }
