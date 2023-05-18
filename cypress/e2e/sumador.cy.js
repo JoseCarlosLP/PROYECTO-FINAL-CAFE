@@ -21,6 +21,6 @@ describe("index", () => {
 
   it("Verifica que el menu este vacio mientras no se hayan creado productos", () => {
     cy.visit("http://localhost:1234/#seccion-menu");
-    cy.get("#menuDisponible").should('be.empty')
+    cy.get("#divMenu").should('be.empty')
   });
 });
