@@ -1,11 +1,11 @@
 import ListaProductos from "./ListaProductos";
 class Reserva{
     constructor(nombreUsuario){
-        this.nombreUsuario=nombreUsuario;
+        this.NombreUsuario=nombreUsuario;
         this.productos=new ListaProductos();
     }
     getNombreUsuario(){
-        return this.nombreUsuario;
+        return this.NombreUsuario;
     }
     añadirProducto(producto){
         this.productos.añadirProducto(producto);
@@ -15,9 +15,9 @@ class Reserva{
     }
     mostrar()
     {
-            divReserva.innerText="Sin Productos Reservados";
+            divReserva.innerText="";
             const content = document.createElement("p");
-            content.innerHTML="<p> Nombre de Usuario: "+this.nombreUsuario+"</p><p> Productos a Reservar: </p><p>"+this.productos.aTexto()+"</p>";
+            content.innerHTML="<p> Nombre de Usuario: "+this.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+this.productos.aTexto()+"</p>";
             const CancelarButton=document.createElement("button");
             CancelarButton.innerText="Cancelar Reserva";
             content.appendChild(CancelarButton);

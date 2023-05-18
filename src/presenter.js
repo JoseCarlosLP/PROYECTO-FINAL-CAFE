@@ -1,6 +1,6 @@
   import Producto from "./Producto";
   import ListaProductos from "./ListaProductos";
-
+  import Mostrar from "./classMostrar";
 const nombre = document.querySelector("#nombre");
 const descripcion = document.querySelector("#descripcion");
 const precio = document.querySelector("#precio");
@@ -13,10 +13,11 @@ const menuRef = document.getElementById("menu-ref");
 const prodRef = document.getElementById("productos-ref");
 const formVerReserva=document.querySelector("#MostrarReserva-form");
 const divReserva=document.getElementById("divReserva");
+const divMenu=document.getElementById("divMenu");
 let listaProd = new ListaProductos();
 let contadorId = 1;
 let productoAAñadir;
-
+let mostrar=new Mostrar();
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
@@ -43,8 +44,9 @@ form.addEventListener("submit", (event) => {
 });
 
 menuRef.addEventListener('click',function(){
-  listaMenu.innerHTML="";  //Cada que se hace click, la lista se vacia y se evita duplicar el menu
-  listaMenu.value=listaProd.mostrarMenuDisponible(listaMenu);
+  //listaMenu.innerHTML="";  //Cada que se hace click, la lista se vacia y se evita duplicar el menu
+  //listaMenu.value=listaProd.mostrarMenuDisponible(listaMenu);
+  mostrar.ListaProductos(listaProd);
 })
 prodRef.addEventListener('click',function(){
   divProducto.innerHTML = productoAAñadir.aTextoConStock();
@@ -54,5 +56,4 @@ formVerReserva.addEventListener("submit", (event) => {
   event.preventDefault();
   divReserva.innerText="";
   listaProd.reserva.mostrar();
-  
 });

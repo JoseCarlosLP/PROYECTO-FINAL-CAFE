@@ -39,33 +39,6 @@ class ListaProductos
         }
         return cadena;
     };
-    mostrarMenuDisponible(lista)
-    {
-        if(!this.reserva)
-            this.reserva=new Reserva("Usuario 1");
-        const ListaAMostrar=this.Lista;
-        ListaAMostrar.forEach((producto, index) => {
-            
-            if(producto.tieneStock())
-            {
-            const li=document.createElement("li");
-            const botonReservar = document.createElement("button");
-            botonReservar.innerText="Reservar";
-            li.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
-            if(producto.tienePrecio()) li.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
-            if(producto.tieneStock()) li.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock;
-            lista.appendChild(li);
-            lista.appendChild(botonReservar);
-            
-            botonReservar.onclick=()=>{
-                let producto=this.Lista[index];
-                this.reserva.añadirProducto(producto);
-                producto.decrementarStock(1);
-                alert("Se reservó el producto escogido");
-            }}
-        });
-        return lista;
-    }
 }
 
 export default ListaProductos;
