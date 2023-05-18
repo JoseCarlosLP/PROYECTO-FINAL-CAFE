@@ -44,8 +44,7 @@ form.addEventListener("submit", (event) => {
 });
 
 menuRef.addEventListener('click',function(){
-  //listaMenu.innerHTML="";  //Cada que se hace click, la lista se vacia y se evita duplicar el menu
-  //listaMenu.value=listaProd.mostrarMenuDisponible(listaMenu);
+  
   mostrar.ListaProductos(listaProd);
 })
 prodRef.addEventListener('click',function(){
@@ -55,5 +54,5 @@ prodRef.addEventListener('click',function(){
 formVerReserva.addEventListener("submit", (event) => {
   event.preventDefault();
   divReserva.innerText="";
-  listaProd.reserva.mostrar();
+  mostrar.Reservas(listaProd.reserva)
 });
