@@ -46,8 +46,11 @@ class Producto
   aTextoConStock()
   {
     let cadena = "";
-    cadena=this.aTextoConPrecio();
-    cadena+=", Stock: "+ this.Stock;
+    if(this.Precio==undefined)
+      this.Precio=0;
+    if(this.Stock==undefined)
+      this.Stock=0;
+    cadena+=this.aTextoConPrecio(); cadena+=", Stock: "+ this.Stock;
     return cadena;
   }
 

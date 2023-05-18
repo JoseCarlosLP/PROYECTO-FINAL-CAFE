@@ -31,10 +31,11 @@ class ListaProductos
         let cadena = "";
         for(let i=0;i<this.Lista.length;i++)
         {
-            if(this.Lista[i].Precio===undefined || this.Lista[i].Precio===0)
-                cadena += this.Lista[i].aTexto();
-            else if(this.Lista[i].Stock===undefined || this.Lista[i].Stock===0) cadena += this.Lista[i].aTextoConPrecio();
-            else cadena += this.Lista[i].aTextoConStock();
+            // if(this.Lista[i].Precio===undefined || this.Lista[i].Precio===0)
+            //     cadena += this.Lista[i].aTexto();
+            // if(this.Lista[i].Stock===undefined || this.Lista[i].Stock===0)
+            //     cadena += this.Lista[i].aTextoConPrecio();
+            /*else */cadena += this.Lista[i].aTextoConStock();
             
             if (i<this.Lista.length - 1)
             {

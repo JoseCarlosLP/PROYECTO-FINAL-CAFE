@@ -62,7 +62,7 @@ describe("ListaProductos", () => {
       listaProd.añadirProducto(prod1);
       listaProd.añadirProducto(prod2);
       listaProd.añadirProducto(prod3);
-      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml.");
+      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 0, Stock: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Precio: 0, Stock: 0");
     });
 
     it("Deberia converir a texto el contenido de una lista con productos con precio", () => {
@@ -74,7 +74,7 @@ describe("ListaProductos", () => {
       listaProd.añadirProducto(prod1);
       listaProd.añadirProducto(prod2);
       listaProd.añadirProducto(prod3);
-      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 15; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml.");
+      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 15, Stock: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Precio: 0, Stock: 0");
     });
 
     it("Deberia converir a texto el contenido de una lista con productos con precio y stock", () => {
@@ -88,6 +88,6 @@ describe("ListaProductos", () => {
       listaProd.añadirProducto(prod2);
       listaProd.añadirProducto(prod3);
       prod1.decrementarStock(1); //simulamos presionar el boton
-      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 15, Stock: 599; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml.");
+      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 15, Stock: 599; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Precio: 0, Stock: 0");
     });
   });
