@@ -19,7 +19,7 @@ class Mostrar{
                 const content = document.createElement("p");
                 content.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
                 if(producto.tienePrecio()) content.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
-                if(producto.tieneStock()) content.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock;
+                if(producto.tieneStock()) content.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock + "<br>";
                 content.appendChild(botonReservar);
                 li.appendChild(content);
                 divMenu.appendChild(li);
