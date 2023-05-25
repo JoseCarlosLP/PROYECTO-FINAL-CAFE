@@ -8,15 +8,50 @@ const stock = document.querySelector("#stock");
 const form = document.querySelector("#crearProducto-form");
 const divProducto = document.querySelector("#resultadoProducto-div");
 const divLista = document.querySelector("#resultadoLista-div");
-const menuRef = document.getElementById("menu-ref");
+const misReservasRef = document.getElementById("verReserva-button");
 const prodRef = document.getElementById("productos-ref");
-const formVerReserva=document.querySelector("#MostrarReserva-form");
 const divReserva=document.getElementById("divReserva");
+const menu_btns =document.getElementsByClassName("menu_btn");
 
 let listaProd = new ListaProductos();
 let contadorId = 1;
 let productoAAñadir;
 let mostrar=new Mostrar();
+
+const div_vistaAdmin = document.getElementById('vista_admin');
+const div_vistaMenu = document.getElementById('vista_menu');
+const div_vistaMisReservas = document.getElementById('vista_MisReservas');
+
+window.addEventListener('load',function(){
+  div_vistaAdmin.style.display = 'none';
+  div_vistaMisReservas.style.display='none';
+  div_vistaMenu.style.display = 'block';
+})
+
+for (var i = 0; i < menu_btns.length; i++) {
+  menu_btns[i].addEventListener('click',function(){
+    div_vistaAdmin.style.display = 'none';
+    div_vistaMisReservas.style.display='none';
+    div_vistaMenu.style.display = 'block';
+    mostrar.ListaProductos(listaProd);
+  })
+}
+
+prodRef.addEventListener('click',function(){
+  div_vistaMenu.style.display = 'none';
+  div_vistaMisReservas.style.display='none';
+  div_vistaAdmin.style.display = 'block';  
+  divProducto.innerHTML = productoAAñadir.aTextoConStock();
+  divLista.innerHTML = listaProd.aTexto();
+})
+
+misReservasRef.addEventListener("click", function(){
+  div_vistaAdmin.style.display = 'none';
+  div_vistaMenu.style.display = 'none';
+  div_vistaMisReservas.style.display='block';
+  divReserva.innerText="";
+  mostrar.Reservas(listaProd.reserva,listaProd)
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -42,19 +77,4 @@ form.addEventListener("submit", (event) => {
     alert("Ingrese valores válidos para nombre y descripción.");
     return;
   }
-});
-
-menuRef.addEventListener('click',function(){
-  mostrar.ListaProductos(listaProd);
-})
-
-prodRef.addEventListener('click',function(){
-  divProducto.innerHTML = productoAAñadir.aTextoConStock();
-  divLista.innerHTML = listaProd.aTexto();
-})
-
-formVerReserva.addEventListener("submit", (event) => {
-  event.preventDefault();
-  divReserva.innerText="";
-  mostrar.Reservas(listaProd.reserva,listaProd)
 });
