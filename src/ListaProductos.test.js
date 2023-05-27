@@ -55,39 +55,39 @@ describe("ListaProductos", () => {
     });
 
     it("Deberia converir a texto el contenido de una lista", () => {
-      let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
-      let prod2= new Producto(2, "Cereales", "Cereales Fruit Loops");
-      let prod3= new Producto(3, "Coca Cola", "Coca Cola de 300 ml.");
+      let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema", "Refrigerios");
+      let prod2= new Producto(2, "Cereales", "Cereales Fruit Loops", "Refrigerios");
+      let prod3= new Producto(3, "Coca Cola", "Coca Cola de 300 ml.", "Bebidas");
       let listaProd= new ListaProductos();
       listaProd.añadirProducto(prod1);
       listaProd.añadirProducto(prod2);
       listaProd.añadirProducto(prod3);
-      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 0, Stock: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Precio: 0, Stock: 0");
+      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Categoría: Refrigerios, Precio: 0, Stock: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Categoría: Refrigerios, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Categoría: Bebidas, Precio: 0, Stock: 0");
     });
 
     it("Deberia converir a texto el contenido de una lista con productos con precio", () => {
-      let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+      let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema", "Refrigerios");
       prod1.establecerPrecio(15);
-      let prod2= new Producto(2, "Cereales", "Cereales Fruit Loops");
-      let prod3= new Producto(3, "Coca Cola", "Coca Cola de 300 ml.");
+      let prod2= new Producto(2, "Cereales", "Cereales Fruit Loops", "Refrigerios");
+      let prod3= new Producto(3, "Coca Cola", "Coca Cola de 300 ml.", "Bebidas");
       let listaProd= new ListaProductos();
       listaProd.añadirProducto(prod1);
       listaProd.añadirProducto(prod2);
       listaProd.añadirProducto(prod3);
-      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 15, Stock: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Precio: 0, Stock: 0");
+      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Categoría: Refrigerios, Precio: 15, Stock: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Categoría: Refrigerios, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Categoría: Bebidas, Precio: 0, Stock: 0");
     });
 
     it("Deberia converir a texto el contenido de una lista con productos con precio y stock", () => {
-      let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+      let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema", "Refrigerios");
       prod1.establecerPrecio(15);
       prod1.establecerStock(600);
-      let prod2= new Producto(2, "Cereales", "Cereales Fruit Loops");
-      let prod3= new Producto(3, "Coca Cola", "Coca Cola de 300 ml.");
+      let prod2= new Producto(2, "Cereales", "Cereales Fruit Loops", "Refrigerios");
+      let prod3= new Producto(3, "Coca Cola", "Coca Cola de 300 ml.", "Bebidas");
       let listaProd= new ListaProductos();
       listaProd.añadirProducto(prod1);
       listaProd.añadirProducto(prod2);
       listaProd.añadirProducto(prod3);
       prod1.decrementarStock(1); //simulamos presionar el boton
-      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 15, Stock: 599; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Precio: 0, Stock: 0");
+      expect(listaProd.aTexto()).toEqual("Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Categoría: Refrigerios, Precio: 15, Stock: 599; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Categoría: Refrigerios, Precio: 0, Stock: 0; Id: 3, Nombre: Coca Cola, Descripción: Coca Cola de 300 ml., Categoría: Bebidas, Precio: 0, Stock: 0");
     });
   });

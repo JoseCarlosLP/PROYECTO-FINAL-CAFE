@@ -1,11 +1,12 @@
 class Producto
 {
-  constructor(id, nombre, descripcion)
+  constructor(id, nombre, descripcion, categoria)
   {
     this.Id=id;
     this.Nombre=nombre;
     this.Descripcion=descripcion;
     this.CantidadReservada=0;
+    this.Categoria=categoria;
   };
 
   eliminar()
@@ -15,12 +16,13 @@ class Producto
     delete this.Descripcion;
     delete this.Stock;
     delete this.CantidadReservada;
+    delete this.Categoria;
   };
 
   aTexto()
   {
     let cadena = "";
-    cadena += "Id: " + this.Id.toString() + ", Nombre: " + this.Nombre + ", Descripción: " + this.Descripcion;
+    cadena += "Id: " + this.Id.toString() + ", Nombre: " + this.Nombre + ", Descripción: " + this.Descripcion + ", Categoría: " + this.Categoria;
     return cadena;
   };
 
@@ -74,7 +76,6 @@ class Producto
     if(cantidadReservada<this.Stock)
       this.Stock-=cantidadReservada;
   }
-
 }
 
 export default Producto;
