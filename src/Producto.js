@@ -45,7 +45,7 @@ class Producto
       this.Stock=stock;
   }
   establecerCantidadDisponibleParaReservar(cantidadParaReservar){
-    if(this.tieneStock())
+    if(this.tieneStock()&&cantidadParaReservar>0)
     {
       this.CantidadDisponibleParaReservar=cantidadParaReservar;
     }
