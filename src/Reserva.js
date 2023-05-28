@@ -15,7 +15,7 @@ class Reserva{
     }
     CancelarReserva(){
         this.getProductos().forEach(producto => {
-        producto.incrementarStock(1);
+        producto.incrementarCantidadDisponibleParaReservar(1);
     });
 
         this.productos=new ListaProductos;

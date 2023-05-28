@@ -98,6 +98,10 @@ class Producto
     if(cantidadReservada<this.Stock)
       this.Stock-=cantidadReservada;
   }
+  incrementarCantidadDisponibleParaReservar(cantidadReservada)
+  {
+    this.CantidadDisponibleParaReservar+=cantidadReservada;
+  };
   decrementarCantidadDisponibleParaReservar(cantidadReservada)
   {
     this.CantidadDisponibleParaReservar-=cantidadReservada;
