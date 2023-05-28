@@ -42,12 +42,19 @@ class Producto
   establecerStock(stock)
   {
     if(stock>0)
+    {
       this.Stock=stock;
+      this.establecerCantidadDisponibleParaReservar(stock);
+    }
   }
   establecerCantidadDisponibleParaReservar(cantidadParaReservar){
     if(this.tieneStock()&&cantidadParaReservar>0&&cantidadParaReservar<=this.Stock)
     {
       this.CantidadDisponibleParaReservar=cantidadParaReservar;
+    }
+    else
+    {
+      this.CantidadDisponibleParaReservar=undefined;
     }
   }
   establecerCategoria(categoria)
