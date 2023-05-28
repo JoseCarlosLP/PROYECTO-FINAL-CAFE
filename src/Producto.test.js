@@ -86,7 +86,6 @@ describe("Producto", () => {
     prod1.establecerCantidadDisponibleParaReservar(200);
     expect(prod1.CantidadDisponibleParaReservar).toEqual(undefined);
   });
-  
   it("no deberia establecer la cantidad disponible para reservar igual al stock", () => {
     let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema", "Refrigerios");
     prod1.establecerStock(100);
