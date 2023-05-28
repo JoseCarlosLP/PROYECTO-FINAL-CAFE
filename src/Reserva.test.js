@@ -45,5 +45,4 @@ describe("Reserva de Productos", ()=>{
         reserva.CancelarReserva();
         expect(prod1.Stock).toEqual(10);
     });
-    
 });

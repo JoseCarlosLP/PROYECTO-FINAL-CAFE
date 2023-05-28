@@ -28,7 +28,7 @@ class Mostrar{
                 botonReservar.onclick=()=>{
                     let producto=listaProd.Lista[index];
                     listaProd.reserva.añadirProducto(producto);
-                    producto.decrementarStock(1);
+                    producto.decrementarCantidadDisponibleParaReservar(1);
                     alert("Se reservó el producto escogido");
                     this.ListaProductos(listaProd);
                 }
