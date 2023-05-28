@@ -97,4 +97,10 @@ describe("Producto", () => {
     prod1.decrementarStock(15);
     expect(prod1.Stock).toEqual(10);
   });
+  it("no deberia decrementar la cantidad reservada si es mayor a la Cantidad disponible para reservar",()=>{
+    let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
+    prod1.establecerStock(10);
+    prod1.decrementarCantidadDisponibleParaReservar(15);
+    expect(prod1.CantidadDisponibleParaReservar).toEqual(10);
+  });
 });

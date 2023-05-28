@@ -104,7 +104,8 @@ class Producto
   };
   decrementarCantidadDisponibleParaReservar(cantidadReservada)
   {
-    this.CantidadDisponibleParaReservar-=cantidadReservada;
+    if(cantidadReservada<this.CantidadDisponibleParaReservar)
+      this.CantidadDisponibleParaReservar-=cantidadReservada;
   };
 }
 
