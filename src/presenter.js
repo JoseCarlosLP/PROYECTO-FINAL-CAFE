@@ -5,6 +5,7 @@ const nombre = document.querySelector("#nombre");
 const descripcion = document.querySelector("#descripcion");
 const precio = document.querySelector("#precio");
 const stock = document.querySelector("#stock");
+const categoria = document.querySelector("#categoria")
 const form = document.querySelector("#crearProducto-form");
 const divProducto = document.querySelector("#resultadoProducto-div");
 const divLista = document.querySelector("#resultadoLista-div");
@@ -60,6 +61,7 @@ form.addEventListener("submit", (event) => {
     productoAAñadir = new Producto(contadorId, nombre.value, descripcion.value);
     productoAAñadir.establecerPrecio(precio.value);
     productoAAñadir.establecerStock(stock.value);
+    productoAAñadir.establecerCategoria(categoria.value)
     listaProd.añadirProducto(productoAAñadir);
     contadorId++;
 

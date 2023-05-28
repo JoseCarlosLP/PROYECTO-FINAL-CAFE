@@ -19,7 +19,8 @@ class Mostrar{
                 const content = document.createElement("p");
                 content.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
                 if(producto.tienePrecio()) content.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
-                if(producto.tieneStock()) content.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock + "<br>";
+                if(producto.tieneStock()) content.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock;
+                if(producto.tieneCategoria()) content.innerHTML+="<br> <b>  Categoría: </b> "+producto.Categoria + "<br>";
                 content.appendChild(botonReservar);
                 li.appendChild(content);
                 divMenu.appendChild(li);

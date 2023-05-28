@@ -45,6 +45,11 @@ class Producto
       this.Stock=stock;
   }
 
+  establecerCategoria(categoria)
+  {
+    this.Categoria=categoria;
+  }
+
   aTextoConStock()
   {
     let cadena = "";
@@ -64,6 +69,11 @@ class Producto
   tieneStock()
   {
     return this.Stock!=undefined && this.Stock!=0
+  }
+
+  tieneCategoria()
+  {
+    return this.Categoria!=undefined && this.Categoria!="";
   }
 
   incrementarStock(cantidadReservada)
