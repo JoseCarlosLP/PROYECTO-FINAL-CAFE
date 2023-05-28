@@ -44,7 +44,12 @@ class Producto
     if(stock>0)
       this.Stock=stock;
   }
-
+  establecerCantidadDisponibleParaReservar(cantidadParaReservar){
+    if(this.tieneStock())
+    {
+      this.CantidadDisponibleParaReservar=cantidadParaReservar;
+    }
+  }
   establecerCategoria(categoria)
   {
     this.Categoria=categoria;

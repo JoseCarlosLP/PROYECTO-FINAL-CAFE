@@ -28,7 +28,7 @@ describe("Producto", () => {
     prod1.establecerStock(100);
     expect(prod1.Stock).toEqual(100);
   });
-  
+
   it("deberia convertir un producto con stock a texto", () => {
     let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema", "Refrigerios");
     prod1.establecerPrecio(10);
@@ -62,6 +62,11 @@ describe("Producto", () => {
     let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
     prod1.establecerStock(-100);
     expect(prod1.Stock).toEqual(undefined);
+  });
+  it("no deberia establecer la cantidad disponible para reservar si no se tiene stock", () => {
+    let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema", "Refrigerios");
+    prod1.establecerCantidadDisponibleParaReservar(100);
+    expect(prod1.CantidadDisponibleParaReservar).toEqual(undefined);
   });
   it("no deberia decrementar el stock si la cantidad reservada es mayor al stock", () => {
     let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
