@@ -1,7 +1,7 @@
 <html>
   <body>
     <div id="vista_admin">
-      <h1>Productos</h1>
+      <h1>PRODUCTOS</h1>
       <form id="crearProducto-form">
         <label for="nombre">Nombre:</label>
         <input type="text" id="nombre" />
@@ -28,11 +28,20 @@
     </div>
     <div id="vista_menu">
       <h2>MENU</h2>
+      <h3 id="Cat">Categorias</h3>
+      <table style="width: 100%;">
+        <tr>
+          <td><h3><a>Sin Filtro</a></h3></td>
+          <td><h3><a>Almuerzos</a></h3></td>
+          <td><h3><a>Bebidas</a></h3></td>
+          <td><h3><a>Refrigerios</a></h3></td>
+        </tr>
+      </table>
       <h3 id="Prod">Productos disponibles</h3>
       <ul id="divMenu"></ul>
       <button id="productos-ref"><h4>Ir a productos</h4></button>
       <button id="verReserva-button"><h4>Ir a mis reservas</h4></button>
-    </div>  
+    </div>    
     <div id="vista_MisReservas">
       <h2>MIS RESERVAS</h2>
       <div id="divReserva"></div>
