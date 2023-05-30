@@ -88,6 +88,11 @@ class Producto
     return this.Categoria!=undefined && this.Categoria!="";
   }
 
+  tieneCantidadDisponibleParaReservar()
+  {
+    return this.CantidadDisponibleParaReservar!=undefined && this.CantidadDisponibleParaReservar!="";
+  };
+
   incrementarStock(cantidadReservada)
   {
     this.Stock+=cantidadReservada;

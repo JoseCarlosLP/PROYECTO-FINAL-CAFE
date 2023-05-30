@@ -11,7 +11,7 @@ class Mostrar{
         const ListaAMostrar=listaProd.Lista;
         ListaAMostrar.forEach((producto, index) => {
 
-            if(producto.tieneStock())
+            if(producto.tieneCantidadDisponibleParaReservar())
             {
                 const li=document.createElement("li");
                 const botonReservar = document.createElement("button");
