@@ -1,4 +1,11 @@
 import Reserva from "./Reserva";
+const prodRef = document.getElementById("productos-ref");
+const nombre = document.querySelector("#nombre");
+const descripcion = document.querySelector("#descripcion");
+const precio = document.querySelector("#precio");
+const stock = document.querySelector("#stock");
+const categoria = document.querySelector("#categoria");
+
 class Mostrar{
     constructor(){
     };
@@ -16,8 +23,10 @@ class Mostrar{
                 const li=document.createElement("li");
                 const botonReservar = document.createElement("button");
                 const botonEliminar = document.createElement("button");
+                const botonEditar = document.createElement("button");
                 botonReservar.innerText="Reservar";
                 botonEliminar.innerText="Eliminar";
+                botonEditar.innerText="Editar";
                 const content = document.createElement("p");
                 content.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
                 if(producto.tienePrecio()) content.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
@@ -25,6 +34,7 @@ class Mostrar{
                 if(producto.tieneCategoria()) content.innerHTML+="<br> <b>  Categoría: </b> "+producto.Categoria + "<br>";
                 content.appendChild(botonReservar);
                 content.appendChild(botonEliminar);
+                content.appendChild(botonEditar);
                 li.appendChild(content);
                 divMenu.appendChild(li);
 
@@ -42,6 +52,25 @@ class Mostrar{
                     listaProd.eliminarProducto(producto.Id);
                     alert("Se eliminó el producto");
                     this.ListaProductos(listaProd, filtro);
+                }
+                
+                botonEditar.onclick=()=>
+                {
+                    let producto = listaProd.Lista[index];
+                    prodRef.click();
+                    nombre.value=producto.Nombre;
+                    descripcion.value=producto.Descripcion;
+                    precio.value=producto.Precio;
+                    stock.value=producto.Stock;
+                    const opcionesCategorias = categoria.options;
+                    for (let i = 0; i < opcionesCategorias.length; i++)
+                    {
+                        if (opcionesCategorias[i].value === producto.Categoria)
+                        {
+                            categoria.selectedIndex = i;
+                            break;
+                        }
+                    }             
                 }
             }
         });
