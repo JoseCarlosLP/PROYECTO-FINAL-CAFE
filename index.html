@@ -13,9 +13,9 @@
         <input type="number" id="stock" value="0" min="0" />
         <label for="categoria">Categoría:</label>
         <select id="categoria">
-          <option value="bebidas">Bebidas</option>
-          <option value="almuerzos">Almuerzos</option>
-          <option value="refrigerios">Refrigerios</option>
+          <option value="Bebidas">Bebidas</option>
+          <option value="Almuerzos">Almuerzos</option>
+          <option value="Refrigerios">Refrigerios</option>
         </select>
         <input type="submit" value="Guardar" id="guardar-button" />
         <script type="module" src="./src/presenter.js"></script>
@@ -29,12 +29,12 @@
     <div id="vista_menu">
       <h2>MENU</h2>
       <h3 id="Cat">Categorias</h3>
-      <table style="width: 100%;">
-        <tr>
-          <td><h3><a>Sin Filtro</a></h3></td>
-          <td><h3><a>Almuerzos</a></h3></td>
-          <td><h3><a>Bebidas</a></h3></td>
-          <td><h3><a>Refrigerios</a></h3></td>
+      <table style="width:50%;">
+        <tr id="filtro">
+          <td><h3><button data-filtro="Sin Filtro">Sin Filtro</button></h3></td>
+          <td><h3><button data-filtro="Almuerzos">Almuerzos</button></h3></td>
+          <td><h3><button data-filtro="Bebidas">Bebidas</button></h3></td>
+          <td><h3><button data-filtro="Refrigerios">Refrigerios</button></h3></td>
         </tr>
       </table>
       <h3 id="Prod">Productos disponibles</h3>

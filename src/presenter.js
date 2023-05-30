@@ -5,7 +5,7 @@ const nombre = document.querySelector("#nombre");
 const descripcion = document.querySelector("#descripcion");
 const precio = document.querySelector("#precio");
 const stock = document.querySelector("#stock");
-const categoria = document.querySelector("#categoria")
+const categoria = document.querySelector("#categoria");
 const form = document.querySelector("#crearProducto-form");
 const divProducto = document.querySelector("#resultadoProducto-div");
 const divLista = document.querySelector("#resultadoLista-div");
@@ -23,10 +23,13 @@ const div_vistaAdmin = document.getElementById('vista_admin');
 const div_vistaMenu = document.getElementById('vista_menu');
 const div_vistaMisReservas = document.getElementById('vista_MisReservas');
 
+const catElegida = document.getElementById("filtro");
+
 window.addEventListener('load',function(){
   div_vistaAdmin.style.display = 'none';
   div_vistaMisReservas.style.display='none';
   div_vistaMenu.style.display = 'block';
+  
 })
 
 for (var i = 0; i < menu_btns.length; i++) {
@@ -34,9 +37,19 @@ for (var i = 0; i < menu_btns.length; i++) {
     div_vistaAdmin.style.display = 'none';
     div_vistaMisReservas.style.display='none';
     div_vistaMenu.style.display = 'block';
-    mostrar.ListaProductos(listaProd);
+    mostrar.ListaProductos(listaProd,"Sin Filtro");
   })
 }
+
+const botonesCategorias = document.querySelectorAll("button[data-filtro]");
+botonesCategorias.forEach(function(boton) {
+  boton.addEventListener("click", function() {
+    const nuevoFiltro = this.getAttribute("data-filtro");
+    catElegida.setAttribute("data-filtro", nuevoFiltro);
+    mostrar.ListaProductos(listaProd,catElegida.getAttribute("data-filtro"));
+  });
+});
+
 
 prodRef.addEventListener('click',function(){
   div_vistaMenu.style.display = 'none';
@@ -51,10 +64,10 @@ misReservasRef.addEventListener("click", function(){
   div_vistaMenu.style.display = 'none';
   div_vistaMisReservas.style.display='block';
   divReserva.innerText="";
-  mostrar.Reservas(listaProd.reserva,listaProd)
+  mostrar.Reservas(listaProd.reserva,listaProd);
 });
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", (event) => {``
   event.preventDefault();
 
   if (nombre.value.trim() !== "" && descripcion.value.trim() !== "") {
@@ -72,7 +85,7 @@ form.addEventListener("submit", (event) => {
     descripcion.value = "";
     precio.value = 0;
     stock.value = 0;
-    mostrar.ListaProductos(listaProd);
+    mostrar.ListaProductos(listaProd,"Sin Filtro");
   }
   else
   {

@@ -90,7 +90,7 @@ class Producto
 
   tieneCantidadDisponibleParaReservar()
   {
-    return this.CantidadDisponibleParaReservar!=undefined && this.CantidadDisponibleParaReservar!="";
+    return this.CantidadDisponibleParaReservar!=undefined && this.CantidadDisponibleParaReservar!=0;
   };
 
   incrementarStock(cantidadReservada)

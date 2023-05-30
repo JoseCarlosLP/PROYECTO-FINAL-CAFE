@@ -2,7 +2,7 @@ import Reserva from "./Reserva";
 class Mostrar{
     constructor(){
     };
-    ListaProductos(listaProd){
+    ListaProductos(listaProd,filtro){
         divMenu.innerText="";
         if(!listaProd.reserva)
         {
@@ -11,8 +11,8 @@ class Mostrar{
         const ListaAMostrar=listaProd.Lista;
         ListaAMostrar.forEach((producto, index) => {
 
-            if(producto.tieneCantidadDisponibleParaReservar())
-            {
+            if (producto.tieneCantidadDisponibleParaReservar() && (producto.Categoria == filtro || filtro == "Sin Filtro"))
+                {
                 const li=document.createElement("li");
                 const botonReservar = document.createElement("button");
                 botonReservar.innerText="Reservar";
@@ -30,7 +30,7 @@ class Mostrar{
                     listaProd.reserva.añadirProducto(producto);
                     producto.decrementarCantidadDisponibleParaReservar(1);
                     alert("Se reservó el producto escogido");
-                    this.ListaProductos(listaProd);
+                    this.ListaProductos(listaProd,filtro);
                 }
             }
         });
@@ -39,17 +39,18 @@ class Mostrar{
     {
         divReserva.innerText="";
         const content = document.createElement("p");
-        content.innerHTML="<p> Nombre de Usuario: "+reserva.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+reserva.productos.aTexto()+"</p>";
-        const CancelarButton=document.createElement("button");
-        CancelarButton.innerText="Cancelar Reserva";
-        content.appendChild(CancelarButton);
-        divReserva.appendChild(content);
-        CancelarButton.onclick=()=>{ 
-            reserva.CancelarReserva();
-            alert("Se canceló la reserva");
-            this.Reservas(reserva);
-            this.ListaProductos(listaProd);
-        }
+
+            content.innerHTML="<p> Nombre de Usuario: "+reserva.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+reserva.productos.aTexto()+"</p>";
+            const CancelarButton=document.createElement("button");
+            CancelarButton.innerText="Cancelar Reserva";
+            content.appendChild(CancelarButton);
+            divReserva.appendChild(content);
+            CancelarButton.onclick=()=>{ 
+                reserva.CancelarReserva();
+                alert("Se canceló la reserva");
+                this.Reservas(reserva);
+                this.ListaProductos(listaProd,"Sin Filtro");
+                }
     }
 }
 export default Mostrar;
