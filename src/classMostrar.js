@@ -39,7 +39,8 @@ class Mostrar{
     {
         divReserva.innerText="";
         const content = document.createElement("p");
-
+        if(reserva.getProductos().length>0)
+        {
             content.innerHTML="<p> Nombre de Usuario: "+reserva.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+reserva.productos.aTexto()+"</p>";
             const CancelarButton=document.createElement("button");
             CancelarButton.innerText="Cancelar Reserva";
@@ -51,6 +52,7 @@ class Mostrar{
                 this.Reservas(reserva);
                 this.ListaProductos(listaProd,"Sin Filtro");
                 }
+        }
     }
 }
 export default Mostrar;
