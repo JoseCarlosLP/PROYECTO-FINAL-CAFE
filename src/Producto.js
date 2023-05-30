@@ -100,7 +100,7 @@ class Producto
 
   decrementarStock(cantidadReservada)
   {
-    if(cantidadReservada<this.Stock)
+    if(cantidadReservada<=this.Stock)
       this.Stock-=cantidadReservada;
   }
   incrementarCantidadDisponibleParaReservar(cantidadReservada)
@@ -109,7 +109,7 @@ class Producto
   };
   decrementarCantidadDisponibleParaReservar(cantidadReservada)
   {
-    if(cantidadReservada<this.CantidadDisponibleParaReservar)
+    if(cantidadReservada<=this.CantidadDisponibleParaReservar)
       this.CantidadDisponibleParaReservar-=cantidadReservada;
   };
 }
