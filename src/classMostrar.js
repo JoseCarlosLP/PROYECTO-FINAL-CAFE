@@ -70,7 +70,8 @@ class Mostrar{
                             categoria.selectedIndex = i;
                             break;
                         }
-                    }             
+                    }
+                    listaProd.eliminarProducto(producto.Id);
                 }
             }
         });

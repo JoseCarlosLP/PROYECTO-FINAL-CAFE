@@ -19,7 +19,6 @@ class ListaProductos
         {
             if(this.Lista[i].Id==id)
             {
-                this.Lista[i].eliminar();
                 this.Lista.splice(i, 1);
                 break;
             }
