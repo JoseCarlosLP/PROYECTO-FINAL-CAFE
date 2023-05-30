@@ -15,13 +15,16 @@ class Mostrar{
                 {
                 const li=document.createElement("li");
                 const botonReservar = document.createElement("button");
+                const botonEliminar = document.createElement("button");
                 botonReservar.innerText="Reservar";
+                botonEliminar.innerText="Eliminar";
                 const content = document.createElement("p");
                 content.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
                 if(producto.tienePrecio()) content.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
                 if(producto.tieneStock()) content.innerHTML+="<br> <b>  Stock: </b> "+producto.Stock;
                 if(producto.tieneCategoria()) content.innerHTML+="<br> <b>  Categoría: </b> "+producto.Categoria + "<br>";
                 content.appendChild(botonReservar);
+                content.appendChild(botonEliminar);
                 li.appendChild(content);
                 divMenu.appendChild(li);
 
@@ -31,6 +34,14 @@ class Mostrar{
                     producto.decrementarCantidadDisponibleParaReservar(1);
                     alert("Se reservó el producto escogido");
                     this.ListaProductos(listaProd,filtro);
+                }
+
+                botonEliminar.onclick=()=>
+                {
+                    let producto = listaProd.Lista[index];
+                    listaProd.eliminarProducto(producto.Id);
+                    alert("Se eliminó el producto");
+                    this.ListaProductos(listaProd, filtro);
                 }
             }
         });
