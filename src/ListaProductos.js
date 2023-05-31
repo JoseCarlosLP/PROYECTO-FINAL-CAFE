@@ -11,7 +11,20 @@ class ListaProductos
     añadirProducto(producto)
     {
         this.Lista.push(producto);
+        producto.CantidadReservada=producto.CantidadReservada+1;
     };
+
+    eliminarRepetidos() {
+        let newArray = [];
+        this.Lista.forEach(producto => {
+          const claveUnica = producto.Nombre;
+          const index = newArray.findIndex(item => item.Nombre === claveUnica);
+          if (index === -1) {
+            newArray.push(producto);
+          }
+        });
+        return newArray;
+      }
 
     eliminarProducto(id)
     {
@@ -32,6 +45,23 @@ class ListaProductos
         {
             cadena += this.Lista[i].aTextoConStock();
             if (i<this.Lista.length - 1)
+            {
+                cadena+= "; ";
+            }
+        }
+        return cadena;
+    };
+
+    aTextoConCantidadReservada()
+    {
+        let cadena = "";
+        let Productos=this.eliminarRepetidos();
+        for(let i=0;i<Productos.length;i++)
+        {
+            cadena += Productos[i].aTextoConStock();
+            if(Productos[i].CantidadReservada>0)
+                cadena+=", Cantidad Reservada: "+Productos[i].CantidadReservada + " ";
+            if (i<Productos[i] - 1)
             {
                 cadena+= "; ";
             }
