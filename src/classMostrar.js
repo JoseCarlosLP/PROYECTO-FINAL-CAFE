@@ -92,7 +92,18 @@ class Mostrar{
                 alert("Se canceló la reserva");
                 this.Reservas(reserva);
                 this.ListaProductos(listaProd,"Sin Filtro");
-                }
+            }
+
+            const ConfirmarEntregaButton=document.createElement("button");
+            ConfirmarEntregaButton.innerText="Confirmar recepcion del pedido";
+            content.appendChild(ConfirmarEntregaButton);
+            divReserva.appendChild(content);
+            ConfirmarEntregaButton.onclick=()=>{ 
+                reserva.confirmarEntrega();
+                alert("Se confirmo la recepcion del pedido exitosamente");
+                this.Reservas(reserva,listaProd);
+                this.ListaProductos(listaProd,"Sin Filtro");
+            }
         }
     }
 }
