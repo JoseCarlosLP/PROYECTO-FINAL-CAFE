@@ -6,6 +6,9 @@ const precio = document.querySelector("#precio");
 const stock = document.querySelector("#stock");
 const categoria = document.querySelector("#categoria");
 
+const divReservasCompletadas=document.getElementById("divReservasCompletadas");
+let reservasEntregadas=[];
+
 class Mostrar{
     constructor(){
     };
@@ -82,6 +85,7 @@ class Mostrar{
         if(reserva.getProductos().length>0)
         {
             this.ReservasPendientes(divReserva,reserva,listaProd);
+            this.ReservasCompletadas();
         }
     }
 
@@ -112,10 +116,24 @@ class Mostrar{
             ConfirmarEntregaButton.onclick=()=>{ 
                 reserva.confirmarEntrega();
                 alert("Se confirmo la recepcion del pedido exitosamente");
+                reservasEntregadas.push(reserva);
                 listaProd.reserva=new Reserva("Usuario 1");
                 this.Reservas(reserva,listaProd);
                 this.ListaProductos(listaProd,"Sin Filtro");
             }
+        }
+    }
+
+    ReservasCompletadas(){
+        divReservasCompletadas.innerText="";
+        const subtitulo = document.createElement("h3");
+        subtitulo.innerHTML="<h3>MIS RESERVAS COMPLETADAS</h3>";
+        divReservasCompletadas.appendChild(subtitulo);
+        for(let i=0;i<reservasEntregadas.length;i++)
+        {
+            const content = document.createElement("p");
+            content.innerHTML="<p> <b> Nombre de Usuario </b>: "+reservasEntregadas[i].NombreUsuario+"</p><p> Productos Reservados: </p><p>"+reservasEntregadas[i].productos.aTexto()+"</p>";
+            divReservasCompletadas.appendChild(content);
         }
     }
 }
