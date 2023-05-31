@@ -79,21 +79,32 @@ class Mostrar{
     Reservas(reserva,listaProd)
     {
         divReserva.innerText="";
-        const content = document.createElement("p");
         if(reserva.getProductos().length>0)
         {
+            this.ReservasPendientes(divReserva,reserva,listaProd);
+        }
+    }
+
+    ReservasPendientes(divReserva,reserva,listaProd){
+
+        const subtitulo = document.createElement("h3");
+        subtitulo.innerHTML="<h3>MIS RESERVAS PENDIENTES</h3>";
+        divReserva.appendChild(subtitulo);
+        if(reserva.estadoReserva=="Pendiente"){
+            const content = document.createElement("p");
             content.innerHTML="<p> Nombre de Usuario: "+reserva.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+reserva.productos.aTexto()+"</p>";
             const CancelarButton=document.createElement("button");
             CancelarButton.innerText="Cancelar Reserva";
             content.appendChild(CancelarButton);
             divReserva.appendChild(content);
+    
             CancelarButton.onclick=()=>{ 
                 reserva.CancelarReserva();
                 alert("Se canceló la reserva");
                 this.Reservas(reserva);
                 this.ListaProductos(listaProd,"Sin Filtro");
             }
-
+    
             const ConfirmarEntregaButton=document.createElement("button");
             ConfirmarEntregaButton.innerText="Confirmar recepcion del pedido";
             content.appendChild(ConfirmarEntregaButton);
@@ -101,6 +112,7 @@ class Mostrar{
             ConfirmarEntregaButton.onclick=()=>{ 
                 reserva.confirmarEntrega();
                 alert("Se confirmo la recepcion del pedido exitosamente");
+                listaProd.reserva=new Reserva("Usuario 1");
                 this.Reservas(reserva,listaProd);
                 this.ListaProductos(listaProd,"Sin Filtro");
             }
