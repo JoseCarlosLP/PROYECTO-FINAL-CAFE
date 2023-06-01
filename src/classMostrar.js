@@ -121,7 +121,7 @@ class Mostrar{
             }
     
             const ConfirmarEntregaButton=document.createElement("button");
-            ConfirmarEntregaButton.innerText="Confirmar recepcion del pedido";
+            ConfirmarEntregaButton.innerText="Confirmar entrega del pedido";
             content.appendChild(ConfirmarEntregaButton);
             if(vista=="Usuario")
             {
@@ -130,7 +130,7 @@ class Mostrar{
             divReserva.appendChild(content);
             ConfirmarEntregaButton.onclick=()=>{ 
                 reserva.confirmarEntrega();
-                alert("Se confirmo la recepcion del pedido exitosamente");
+                alert("Se confirmo la entrega del pedido exitosamente");
                 reservasEntregadas.push(reserva);
                 listaProd.reserva=new Reserva("Usuario 1");
                 this.Reservas(reserva,listaProd);

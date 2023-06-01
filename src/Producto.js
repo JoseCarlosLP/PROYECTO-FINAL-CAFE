@@ -109,6 +109,10 @@ class Producto
     if(cantidadReservada<=this.CantidadDisponibleParaReservar)
       this.CantidadDisponibleParaReservar-=cantidadReservada;
   };
+  decrementarCantidadReservada(cantidadReservada)
+  {
+    this.CantidadReservada-=cantidadReservada;
+  }
 }
 
 export default Producto;
