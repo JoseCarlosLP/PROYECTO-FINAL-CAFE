@@ -19,8 +19,8 @@ describe("index", () => {
     cy.get("#resultadoLista-div").should("contain", "Id: 1, Nombre: Galletas, Descripción: Galletas de chocolate con relleno de crema, Precio: 0, Stock: 0; Id: 2, Nombre: Cereales, Descripción: Cereales Fruit Loops, Precio: 0, Stock: 0")
   }); 
 
-  xit("Verifica que el menu este vacio mientras no se hayan creado productos", () => {
+  it("Verifica que el menu este vacio mientras no se hayan creado productos", () => {
     cy.visit("http://localhost:1234/#seccion-menu");
-    cy.get("#divMenunet").should('be.empty')
+    cy.get("#divMenu").should('be.empty')
   });
 });
