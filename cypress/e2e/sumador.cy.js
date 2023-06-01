@@ -40,5 +40,4 @@ describe("index", () => {
     cy.on('window:confirm', () => true);
     cy.get("#divMenu").should('be.empty');
   })
-
 });
