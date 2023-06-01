@@ -28,8 +28,8 @@ class Producto
 
   aTextoBonito()
   {
-    let cadena="|*";
-    cadena += "Nombre: " + this.Nombre + "Descripción: " + this.Descripcion + "Categoría: " + this.Categoria+ "Precio: "+ this.Precio;
+    let cadena="";
+    cadena += "Nombre: " + this.Nombre + "<br>Descripción: " + this.Descripcion + "<br>Categoría: " + this.Categoria + "<br>Precio: "+ this.Precio;
     return cadena;
   }
 

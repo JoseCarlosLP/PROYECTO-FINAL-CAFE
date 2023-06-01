@@ -77,7 +77,7 @@ class ListaProductos
         {
             cadena += Productos[i].aTextoBonito();
             if(Productos[i].CantidadReservada>0)
-                cadena+="Cantidad Reservada: "+Productos[i].CantidadReservada + "*|";
+                cadena+="<br>Cantidad Reservada: "+Productos[i].CantidadReservada + "<br><br>";
         }
         return cadena;
     }

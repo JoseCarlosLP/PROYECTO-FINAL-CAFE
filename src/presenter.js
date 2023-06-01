@@ -7,8 +7,6 @@ const precio = document.querySelector("#precio");
 const stock = document.querySelector("#stock");
 const categoria = document.querySelector("#categoria");
 const form = document.querySelector("#crearProducto-form");
-const divProducto = document.querySelector("#resultadoProducto-div");
-const divLista = document.querySelector("#resultadoLista-div");
 const misReservasRef = document.getElementById("verReserva-button");
 const prodRef = document.getElementById("productos-ref");
 const divReserva=document.getElementById("divReserva");
@@ -92,8 +90,6 @@ prodRef.addEventListener('click',function(){
 div_vistaMenu.style.display = 'none';
 div_vistaMisReservas.style.display='none';
 div_vistaAdmin.style.display = 'block';  
-divProducto.innerHTML = productoAAñadir.aTextoConStock();
-divLista.innerHTML = listaProd.aTexto();
 })
 
 misReservasRef.addEventListener("click", function(){
@@ -114,9 +110,6 @@ if (nombre.value.trim() !== "" && descripcion.value.trim() !== "") {
   productoAAñadir.establecerCategoria(categoria.value)
   listaProd.añadirProducto(productoAAñadir);
   contadorId++;
-
-  divProducto.innerHTML = productoAAñadir.aTextoConStock();
-  divLista.innerHTML = listaProd.aTexto();
 
   nombre.value = "";
   descripcion.value = "";
