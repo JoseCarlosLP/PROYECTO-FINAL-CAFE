@@ -40,7 +40,7 @@ menu_btns[i].addEventListener('click',function(){
   div_vistaAdmin.style.display = 'none';
   div_vistaMisReservas.style.display='none';
   div_vistaMenu.style.display = 'block';
-  mostrar.ListaProductos(listaProd,"Sin Filtro");
+  mostrar.ListaProductos(listaProd,"Sin Filtro",tipoVista);
 })
 }
 
@@ -49,7 +49,7 @@ botonesCategorias.forEach(function(boton) {
 boton.addEventListener("click", function() {
   const nuevoFiltro = this.getAttribute("data-filtro");
   catElegida.setAttribute("data-filtro", nuevoFiltro);
-  mostrar.ListaProductos(listaProd,catElegida.getAttribute("data-filtro"));
+  mostrar.ListaProductos(listaProd,catElegida.getAttribute("data-filtro"),tipoVista);
 });
 });
 
@@ -66,6 +66,7 @@ botoncambiarVista.addEventListener("click", function()
     tipoVista="Usuario";
   }
   tipoVistaTexto.textContent="Tipo de vista actual: "+tipoVista;
+  mostrar.ListaProductos(listaProd,"Sin Filtro",tipoVista);
 });
 
 
@@ -103,7 +104,7 @@ if (nombre.value.trim() !== "" && descripcion.value.trim() !== "") {
   descripcion.value = "";
   precio.value = 0;
   stock.value = 0;
-  mostrar.ListaProductos(listaProd,"Sin Filtro");
+  mostrar.ListaProductos(listaProd,"Sin Filtro",tipoVista);
 }
 else
 {

@@ -12,7 +12,7 @@ let reservasEntregadas=[];
 class Mostrar{
     constructor(){
     };
-    ListaProductos(listaProd,filtro){
+    ListaProductos(listaProd,filtro,vista){
         divMenu.innerText="";
         if(!listaProd.reserva)
         {
@@ -39,6 +39,11 @@ class Mostrar{
                 content.appendChild(botonEliminar);
                 content.appendChild(botonEditar);
                 li.appendChild(content);
+                if(vista=="Usuario")
+                {
+                    botonEliminar.style.display="none";
+                    botonEditar.style.display="none";
+                }
                 divMenu.appendChild(li);
 
                 botonReservar.onclick=()=>{
@@ -46,7 +51,7 @@ class Mostrar{
                     listaProd.reserva.añadirProducto(producto);
                     producto.decrementarCantidadDisponibleParaReservar(1);
                     alert("Se reservó el producto escogido");
-                    this.ListaProductos(listaProd,filtro);
+                    this.ListaProductos(listaProd,filtro,vista);
                 }
 
                 botonEliminar.onclick=()=>
@@ -54,7 +59,7 @@ class Mostrar{
                     let producto = listaProd.Lista[index];
                     listaProd.eliminarProducto(producto.Id);
                     alert("Se eliminó el producto");
-                    this.ListaProductos(listaProd, filtro);
+                    this.ListaProductos(listaProd, filtro,vista);
                 }
                 
                 botonEditar.onclick=()=>
