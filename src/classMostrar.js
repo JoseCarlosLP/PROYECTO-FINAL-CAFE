@@ -146,7 +146,7 @@ class Mostrar{
         for(let i=0;i<reservasEntregadas.length;i++)
         {
             const content = document.createElement("p");
-            content.innerHTML="<p> <b> Nombre de Usuario </b>: "+reservasEntregadas[i].NombreUsuario+"</p><p> Productos Reservados: </p><p>"+reservasEntregadas[i].productos.aTextoConCantidadReservada()+"</p>";
+            content.innerHTML="<p> <b> Nombre de Usuario </b>: "+reservasEntregadas[i].NombreUsuario+"</p><p> Productos Reservados: </p><p>"+reservasEntregadas[i].productos.aTextoBonito()+"</p>";
             divReservasCompletadas.appendChild(content);
         }
     }
