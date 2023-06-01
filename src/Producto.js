@@ -26,6 +26,13 @@ class Producto
     return cadena;
   };
 
+  aTextoBonito()
+  {
+    let cadena="|*";
+    cadena += "Nombre: " + this.Nombre + "Descripción: " + this.Descripcion + "Categoría: " + this.Categoria+ "Precio: "+ this.Precio;
+    return cadena;
+  }
+
   establecerPrecio(precio)
   {
     this.Precio=precio;

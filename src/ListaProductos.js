@@ -68,6 +68,19 @@ class ListaProductos
         }
         return cadena;
     };
+
+    aTextoBonito()
+    {
+        let cadena = "";
+        let Productos=this.eliminarRepetidos();
+        for(let i=0;i<Productos.length;i++)
+        {
+            cadena += Productos[i].aTextoBonito();
+            if(Productos[i].CantidadReservada>0)
+                cadena+="Cantidad Reservada: "+Productos[i].CantidadReservada + "*|";
+        }
+        return cadena;
+    }
 }
 
 export default ListaProductos;
