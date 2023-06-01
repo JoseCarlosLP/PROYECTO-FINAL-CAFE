@@ -60,8 +60,8 @@ class ListaProductos
         {
             cadena += Productos[i].aTextoConStock();
             if(Productos[i].CantidadReservada>0)
-                cadena+=", Cantidad Reservada: "+Productos[i].CantidadReservada + " ";
-            if (i<Productos[i] - 1)
+                cadena+=", Cantidad Reservada: "+Productos[i].CantidadReservada+ " ";
+            if (i<Productos.length-1)
             {
                 cadena+= "; ";
             }

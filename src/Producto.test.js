@@ -110,4 +110,15 @@ describe("Producto", () => {
     expect(prod1.tieneCantidadDisponibleParaReservar()).toEqual(true);
     expect(prod1.CantidadDisponibleParaReservar).toEqual(10);
   });
+  it("Al asignar una categoria, el producto debería actualizarse",()=>{
+    let prod1= new Producto(3, "Galletas", "Galletas de chocolate con relleno de crema");
+    expect(prod1.tieneCantidadDisponibleParaReservar()).toEqual(false);
+    prod1.establecerCategoria("Refrigerios");
+    expect(prod1.tieneCategoria()).toEqual(true);
+  });
+  it("Se deberia poder ver un producto en formato bonito",()=>{
+    let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema","Refrigerios");
+    prod1.establecerPrecio(5);
+    expect(prod1.aTextoBonito()).toEqual("Nombre: Galletas<br>Descripción: Galletas de chocolate con relleno de crema<br>Categoría: Refrigerios<br>Precio: 5");
+  });
 });

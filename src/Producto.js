@@ -9,16 +9,6 @@ class Producto
     this.Categoria=categoria;
   };
 
-  eliminar()
-  {
-    delete this.Id;
-    delete this.Nombre;
-    delete this.Descripcion;
-    delete this.Stock;
-    delete this.CantidadReservada;
-    delete this.Categoria;
-  };
-
   aTexto()
   {
     let cadena = "";
