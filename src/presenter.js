@@ -92,8 +92,6 @@ prodRef.addEventListener('click',function(){
 div_vistaMenu.style.display = 'none';
 div_vistaMisReservas.style.display='none';
 div_vistaAdmin.style.display = 'block';  
-divProducto.innerHTML = productoAAñadir.aTextoConStock();
-divLista.innerHTML = listaProd.aTexto();
 })
 
 misReservasRef.addEventListener("click", function(){
@@ -114,9 +112,6 @@ if (nombre.value.trim() !== "" && descripcion.value.trim() !== "") {
   productoAAñadir.establecerCategoria(categoria.value)
   listaProd.añadirProducto(productoAAñadir);
   contadorId++;
-
-  divProducto.innerHTML = productoAAñadir.aTextoConStock();
-  divLista.innerHTML = listaProd.aTexto();
 
   nombre.value = "";
   descripcion.value = "";
