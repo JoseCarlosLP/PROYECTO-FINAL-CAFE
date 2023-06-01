@@ -23,7 +23,21 @@ describe("index", () => {
     cy.get("#precio").type("10");
     cy.get("#stock").type("10");
     cy.get("#guardar-button").click();
-    cy.get("#resultadoLista-div").find("ul").should("have.length",1);
+    cy.get("#menu_btn").click();
+    cy.get("#divMenu").should("have.length",1);
   });
+  xit("Verificar que se elimine un producto desde vista de Administrador",()=>{
+    cy.visit("/");
+    cy.get("#cambiarVista").click();
+    cy.get("#productos-ref").click();
+    cy.get("#nombre").type("Galletas");
+    cy.get("#descripcion").type("Galletas de chocolate con relleno de crema");
+    cy.get("#precio").type("10");
+    cy.get("#stock").type("10");
+    cy.get("#guardar-button").click();
+    cy.get("#menu_btn").click();
+    cy.get("#Eliminar_btn").click();
+    cy.get("#divMenu").should("have.length",0);
+  })
 
 });

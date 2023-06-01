@@ -30,6 +30,7 @@ class Mostrar{
                 botonReservar.innerText="Reservar";
                 botonEliminar.innerText="Eliminar";
                 botonEditar.innerText="Editar";
+                botonEliminar.id="Eliminar_btn";
                 const content = document.createElement("p");
                 content.innerHTML="<b> Nombre del Producto: </b> "+ producto.Nombre +"<br> <b>  Descripcion: </b> "+producto.Descripcion;
                 if(producto.tienePrecio()) content.innerHTML+="<br> <b>  Precio: </b> "+producto.Precio;
