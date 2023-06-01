@@ -107,7 +107,7 @@ class Mostrar{
         divReserva.appendChild(subtitulo);
         if(reserva.estadoReserva=="Pendiente"){
             const content = document.createElement("p");
-            content.innerHTML="<p> Nombre de Usuario: "+reserva.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+reserva.productos.aTextoConCantidadReservada()+"</p>";
+            content.innerHTML="<p> Nombre de Usuario: "+reserva.NombreUsuario+"</p><p> Productos a Reservar: </p><p>"+reserva.productos.aTextoBonito()+"</p>";
             const CancelarButton=document.createElement("button");
             CancelarButton.innerText="Cancelar Reserva";
             content.appendChild(CancelarButton);
@@ -147,7 +147,7 @@ class Mostrar{
         for(let i=0;i<reservasEntregadas.length;i++)
         {
             const content = document.createElement("p");
-            content.innerHTML="<p> <b> Nombre de Usuario </b>: "+reservasEntregadas[i].NombreUsuario+"</p><p> Productos Reservados: </p><p>"+reservasEntregadas[i].productos.aTextoConCantidadReservada()+"</p>";
+            content.innerHTML="<p> <b> Nombre de Usuario </b>: "+reservasEntregadas[i].NombreUsuario+"</p><p> Productos Reservados: </p><p>"+reservasEntregadas[i].productos.aTextoBonito()+"</p>";
             divReservasCompletadas.appendChild(content);
         }
     }

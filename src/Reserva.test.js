@@ -45,4 +45,13 @@ describe("Reserva de Productos", ()=>{
         reserva.CancelarReserva();
         expect(prod1.Stock).toEqual(10);
     });
+    it("Deberia reducirse el stock los productos cuando se confirma la entrega de la reserva",()=>{
+        let reserva=new Reserva("Usuario 1");
+        let prod1= new Producto(1, "Galletas", "Galletas de chocolate con relleno de crema");
+        prod1.establecerStock(10);
+        reserva.añadirProducto(prod1);
+        reserva.confirmarEntrega();
+        expect(prod1.Stock).toEqual(9);
+        expect(reserva.estadoReserva).toEqual("Entregada");
+    });
 });

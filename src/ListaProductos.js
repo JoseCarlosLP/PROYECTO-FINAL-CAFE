@@ -60,14 +60,27 @@ class ListaProductos
         {
             cadena += Productos[i].aTextoConStock();
             if(Productos[i].CantidadReservada>0)
-                cadena+=", Cantidad Reservada: "+Productos[i].CantidadReservada + " ";
-            if (i<Productos[i] - 1)
+                cadena+=", Cantidad Reservada: "+Productos[i].CantidadReservada+ " ";
+            if (i<Productos.length-1)
             {
                 cadena+= "; ";
             }
         }
         return cadena;
     };
+
+    aTextoBonito()
+    {
+        let cadena = "";
+        let Productos=this.eliminarRepetidos();
+        for(let i=0;i<Productos.length;i++)
+        {
+            cadena += Productos[i].aTextoBonito();
+            if(Productos[i].CantidadReservada>0)
+                cadena+="<br>Cantidad Reservada: "+Productos[i].CantidadReservada + "<br><br>";
+        }
+        return cadena;
+    }
 }
 
 export default ListaProductos;

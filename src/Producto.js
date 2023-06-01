@@ -9,22 +9,19 @@ class Producto
     this.Categoria=categoria;
   };
 
-  eliminar()
-  {
-    delete this.Id;
-    delete this.Nombre;
-    delete this.Descripcion;
-    delete this.Stock;
-    delete this.CantidadReservada;
-    delete this.Categoria;
-  };
-
   aTexto()
   {
     let cadena = "";
     cadena += "Id: " + this.Id.toString() + ", Nombre: " + this.Nombre + ", Descripción: " + this.Descripcion + ", Categoría: " + this.Categoria;
     return cadena;
   };
+
+  aTextoBonito()
+  {
+    let cadena="";
+    cadena += "Nombre: " + this.Nombre + "<br>Descripción: " + this.Descripcion + "<br>Categoría: " + this.Categoria + "<br>Precio: "+ this.Precio;
+    return cadena;
+  }
 
   establecerPrecio(precio)
   {
