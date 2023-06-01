@@ -26,7 +26,7 @@ describe("index", () => {
     cy.get("#menu_btn").click();
     cy.get("#divMenu").should("have.length",1);
   });
-  xit("Verificar que se elimine un producto desde vista de Administrador",()=>{
+  it("Verificar que se elimine un producto desde vista de Administrador",()=>{
     cy.visit("/");
     cy.get("#cambiarVista").click();
     cy.get("#productos-ref").click();
@@ -37,7 +37,8 @@ describe("index", () => {
     cy.get("#guardar-button").click();
     cy.get("#menu_btn").click();
     cy.get("#Eliminar_btn").click();
-    cy.get("#divMenu").should("have.length",0);
+    cy.on('window:confirm', () => true);
+    cy.get("#divMenu").should('be.empty');
   })
 
 });
