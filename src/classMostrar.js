@@ -41,8 +41,13 @@ class Mostrar{
                 li.appendChild(content);
                 if(vista=="Usuario")
                 {
+                    botonReservar.style.display="block";
                     botonEliminar.style.display="none";
                     botonEditar.style.display="none";
+                }
+                else if(vista=="Administrador")
+                {
+                    botonReservar.style.display="none";
                 }
                 divMenu.appendChild(li);
 
