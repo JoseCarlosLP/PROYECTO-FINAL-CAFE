@@ -1,6 +1,3 @@
-import Producto from "./Producto.js";
-import Reserva from "./Reserva.js";
-
 class ListaProductos
 {
     constructor()

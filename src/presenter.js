@@ -100,7 +100,7 @@ divReserva.innerText="";
 mostrar.Reservas(listaProd.reserva,listaProd,tipoVista);
 });
 
-form.addEventListener("submit", (event) => {``
+form.addEventListener("submit", (event) => {
 event.preventDefault();
 
 if (nombre.value.trim() !== "" && descripcion.value.trim() !== "") {
