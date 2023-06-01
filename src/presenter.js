@@ -14,7 +14,9 @@ const prodRef = document.getElementById("productos-ref");
 const divReserva=document.getElementById("divReserva");
 const menu_btns =document.getElementsByClassName("menu_btn");
 const botoncambiarVista = document.querySelector("#cambiarVista");
+const botoncambiarVistaReserva = document.querySelector("#cambiarVistaReserva");
 const tipoVistaTexto = document.querySelector("#tipoVistaTexto");
+const tipoVistaTextoReserva = document.querySelector("#tipoVistaTextoReserva");
 
 let listaProd = new ListaProductos();
 let contadorId = 1;
@@ -69,6 +71,22 @@ botoncambiarVista.addEventListener("click", function()
   mostrar.ListaProductos(listaProd,"Sin Filtro",tipoVista);
 });
 
+botoncambiarVistaReserva.addEventListener("click", function()
+{
+  if(tipoVista=="Usuario")
+  {
+    prodRef.style.display="block";
+    tipoVista="Administrador";
+  }
+  else if(tipoVista=="Administrador")
+  {
+    prodRef.style.display="none";
+    tipoVista="Usuario";
+  }
+  tipoVistaTextoReserva.textContent="Tipo de vista actual: "+tipoVista;
+  mostrar.Reservas(listaProd.reserva,listaProd,tipoVista);
+});
+
 
 prodRef.addEventListener('click',function(){
 div_vistaMenu.style.display = 'none';
@@ -83,7 +101,7 @@ div_vistaAdmin.style.display = 'none';
 div_vistaMenu.style.display = 'none';
 div_vistaMisReservas.style.display='block';
 divReserva.innerText="";
-mostrar.Reservas(listaProd.reserva,listaProd);
+mostrar.Reservas(listaProd.reserva,listaProd,tipoVista);
 });
 
 form.addEventListener("submit", (event) => {``

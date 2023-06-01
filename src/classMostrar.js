@@ -84,17 +84,17 @@ class Mostrar{
             }
         });
     }
-    Reservas(reserva,listaProd)
+    Reservas(reserva,listaProd, vista)
     {
         divReserva.innerText="";
         if(reserva.getProductos().length>0)
         {
-            this.ReservasPendientes(divReserva,reserva,listaProd);
+            this.ReservasPendientes(divReserva,reserva,listaProd, vista);
             this.ReservasCompletadas();
         }
     }
 
-    ReservasPendientes(divReserva,reserva,listaProd){
+    ReservasPendientes(divReserva,reserva,listaProd, vista){
 
         const subtitulo = document.createElement("h3");
         subtitulo.innerHTML="<h3>MIS RESERVAS PENDIENTES</h3>";
@@ -117,6 +117,10 @@ class Mostrar{
             const ConfirmarEntregaButton=document.createElement("button");
             ConfirmarEntregaButton.innerText="Confirmar recepcion del pedido";
             content.appendChild(ConfirmarEntregaButton);
+            if(vista=="Usuario")
+            {
+                ConfirmarEntregaButton.style.display="None";
+            }
             divReserva.appendChild(content);
             ConfirmarEntregaButton.onclick=()=>{ 
                 reserva.confirmarEntrega();
